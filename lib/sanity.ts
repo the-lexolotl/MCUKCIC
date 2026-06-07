@@ -14,7 +14,6 @@ export function urlFor(source: any) {
   return builder.image(source)
 }
 
-// Queries
 export const blogListQuery = `*[_type == "blogPost" && status == "published"] | order(featured desc, publishedAt desc) {
   _id,
   title,
