@@ -45,8 +45,8 @@ function formatDate(dateString: string) {
 export default function BlogClient({ posts }: { posts: any[] }) {
   const [activeFilter, setActiveFilter] = useState('all')
 
-  const featured = posts[0] || null
-  const grid = posts.slice(1)
+  const featured = posts.find((p: any) => p.featured) || posts[0] || null
+  const grid = posts.filter((p: any) => p !== featured)
 
   const filteredFeatured = !featured ? null :
     (activeFilter === 'all' || featured.category === activeFilter ? featured : null)

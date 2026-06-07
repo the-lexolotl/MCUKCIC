@@ -15,7 +15,7 @@ export function urlFor(source: any) {
 }
 
 // Queries
-export const blogListQuery = `*[_type == "blogPost" && status == "published"] | order(publishedAt desc) {
+export const blogListQuery = `*[_type == "blogPost" && status == "published"] | order(featured desc, publishedAt desc) {
   _id,
   title,
   slug,
@@ -23,6 +23,7 @@ export const blogListQuery = `*[_type == "blogPost" && status == "published"] | 
   category,
   publishedAt,
   featuredImage,
+  featured,
   anonymous,
   author-> {
     name,
