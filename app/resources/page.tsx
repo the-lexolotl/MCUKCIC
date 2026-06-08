@@ -1,6 +1,7 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
+import { client, resourceListQuery, urlFor } from '../../lib/sanity'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,7 +9,57 @@ export const metadata: Metadata = {
   description: 'Clear, honest guides written for patients, by patients. No jargon, no agenda — just the information you need.',
 }
 
-export default function Resources() {
+export const revalidate = 60
+
+const categoryOrder = [
+  'getting-started',
+  'using-your-medicine',
+  'devices-equipment',
+  'legal-rights',
+  'living-as-a-patient',
+  'system-advocacy',
+]
+
+const categoryLabels: Record<string, string> = {
+  'getting-started': 'Getting started',
+  'using-your-medicine': 'Using your medicine',
+  'devices-equipment': 'Devices & equipment',
+  'legal-rights': 'Legal & rights',
+  'living-as-a-patient': 'Living as a patient',
+  'system-advocacy': 'The system & advocacy',
+}
+
+const categoryIntros: Record<string, string> = {
+  'getting-started': 'Everything you need to understand the basics and take your first steps as a patient.',
+  'using-your-medicine': 'Practical guides to help you get the most from your cannabis medicine safely and effectively.',
+  'devices-equipment': 'Step-by-step guides to the most common devices used by prescription cannabis patients in the UK.',
+  'legal-rights': 'Understanding your rights as a prescription cannabis patient in the UK.',
+  'living-as-a-patient': 'Practical guidance for day-to-day life as a prescription cannabis patient.',
+  'system-advocacy': 'Understanding the UK medical cannabis system and how to advocate for change.',
+}
+
+const categoryIcons: Record<string, string> = {
+  'getting-started': 'icon-green',
+  'using-your-medicine': 'icon-violet',
+  'devices-equipment': 'icon-orange',
+  'legal-rights': 'icon-green',
+  'living-as-a-patient': 'icon-violet',
+  'system-advocacy': 'icon-orange',
+}
+
+export default async function Resources() {
+  const resources = await client.fetch(resourceListQuery)
+
+  const grouped = categoryOrder
+    .map(cat => ({
+      id: cat,
+      label: categoryLabels[cat],
+      intro: categoryIntros[cat],
+      iconClass: categoryIcons[cat],
+      items: resources.filter((r: any) => r.category === cat)
+    }))
+    .filter(group => group.items.length > 0)
+
   return (
     <>
       <Nav />
@@ -23,113 +74,46 @@ export default function Resources() {
           </div>
         </section>
 
-        {/* GETTING STARTED */}
-        <section className="section">
-          <div className="container">
-            <div className="section-label">Getting started</div>
-            <h2>New to medical cannabis?</h2>
-            <p className="section-sub">Everything you need to understand the basics and take your first steps as a patient.</p>
-            <div className="resource-grid">
-
-              <Link href="/resources/what-is-medical-cannabis" className="resource-card">
-                <div className="resource-icon icon-green">&#9679;</div>
-                <div className="resource-body">
-                  <h3>What is medical cannabis?</h3>
-                  <p>A plain English explainer for anyone new to cannabis medicine or considering it as a treatment option.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-              <Link href="/resources/finding-a-clinic" className="resource-card">
-                <div className="resource-icon icon-violet">&#9679;</div>
-                <div className="resource-body">
-                  <h3>Finding a clinic</h3>
-                  <p>What to look for in a cannabis clinic, questions to ask, and the difference between private and NHS routes.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-              <Link href="/resources/cost-of-prescription" className="resource-card">
-                <div className="resource-icon icon-orange">&#9679;</div>
-                <div className="resource-body">
-                  <h3>The cost of prescription cannabis</h3>
-                  <p>What to expect financially, why it costs what it does, and what help might be available.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
+        {/* NO RESOURCES STATE */}
+        {grouped.length === 0 && (
+          <section className="section">
+            <div className="container content-narrow">
+              <div className="info-box">
+                <p>Our resource guides are being written and will be published shortly. In the meantime, join our <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer">Facebook community</a> or <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer">Discord server</a> where experienced patients can help answer your questions.</p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* USING YOUR MEDICINE */}
-        <section className="section section-tinted">
-          <div className="container">
-            <div className="section-label">Using your medicine</div>
-            <h2>Managing your prescription</h2>
-            <p className="section-sub">Practical guides to help you get the most from your cannabis medicine safely and effectively.</p>
-            <div className="resource-grid">
-
-              <Link href="/resources/storing-your-medicine" className="resource-card">
-                <div className="resource-icon icon-green">&#9679;</div>
-                <div className="resource-body">
-                  <h3>How to store your cannabis medicine</h3>
-                  <p>Keeping your medicine fresh, safe, and out of the wrong hands — what you need to know.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-              <Link href="/resources/oils-and-tinctures" className="resource-card">
-                <div className="resource-icon icon-violet">&#9679;</div>
-                <div className="resource-body">
-                  <h3>How to use oils and tinctures</h3>
-                  <p>A step-by-step guide to using cannabis oils and tinctures correctly and consistently.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
+        {/* RESOURCE CATEGORIES */}
+        {grouped.map((group, index) => (
+          <section
+            key={group.id}
+            className={`section ${index % 2 !== 0 ? 'section-tinted' : ''}`}
+          >
+            <div className="container">
+              <div className="section-label">{group.label}</div>
+              <h2>{group.label}</h2>
+              <p className="section-sub">{group.intro}</p>
+              <div className="resource-grid">
+                {group.items.map((resource: any) => (
+                  <Link
+                    key={resource._id}
+                    href={`/resources/${resource.slug.current}`}
+                    className="resource-card"
+                  >
+                    <div className={`resource-icon ${group.iconClass}`}>&#9679;</div>
+                    <div className="resource-body">
+                      <h3>{resource.title}</h3>
+                      <p>{resource.intro}</p>
+                      <span className="resource-link">Read guide &rarr;</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* DEVICES & EQUIPMENT */}
-        <section className="section">
-          <div className="container">
-            <div className="section-label">Devices &amp; equipment</div>
-            <h2>Using your equipment</h2>
-            <p className="section-sub">Step-by-step guides to the most common devices used by prescription cannabis patients in the UK.</p>
-            <div className="resource-grid">
-
-              <Link href="/resources/dry-herb-vaporiser" className="resource-card">
-                <div className="resource-icon icon-green">&#9679;</div>
-                <div className="resource-body">
-                  <h3>How to use a dry herb vaporiser</h3>
-                  <p>Everything you need to know about loading, using, and getting the most from your dry herb vaporiser.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-              <Link href="/resources/vape-cartridge" className="resource-card">
-                <div className="resource-icon icon-violet">&#9679;</div>
-                <div className="resource-body">
-                  <h3>How to use a vape cartridge</h3>
-                  <p>A straightforward guide to using cannabis vape cartridges safely and effectively.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-              <Link href="/resources/how-to-use-a-grinder" className="resource-card">
-                <div className="resource-icon icon-orange">&#9679;</div>
-                <div className="resource-body">
-                  <h3>How to use a grinder</h3>
-                  <p>How to grind your cannabis flower correctly for the best results from your vaporiser.</p>
-                  <span className="resource-link">Read guide &rarr;</span>
-                </div>
-              </Link>
-
-            </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
         {/* DISCLAIMER */}
         <section className="section section-tinted">

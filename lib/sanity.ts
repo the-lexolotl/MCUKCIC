@@ -58,3 +58,41 @@ export const faqQuery = `*[_type == "faqItem" && published == true] | order(cate
   category,
   order
 }`
+
+export const resourceListQuery = `*[_type == "resource" && status == "published"] | order(category asc, order asc) {
+  _id,
+  title,
+  slug,
+  intro,
+  category,
+  featuredImage,
+  lastReviewed,
+  author-> {
+    name,
+    role,
+    photo
+  }
+}`
+
+export const resourceBySlugQuery = `*[_type == "resource" && slug.current == $slug && status == "published"][0] {
+  _id,
+  title,
+  slug,
+  intro,
+  category,
+  featuredImage,
+  body,
+  lastReviewed,
+  author-> {
+    name,
+    role,
+    photo,
+    bio
+  },
+  relatedResources[]-> {
+    title,
+    slug,
+    intro,
+    category
+  }
+}`
