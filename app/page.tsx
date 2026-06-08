@@ -2,6 +2,17 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Link from 'next/link'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'MCUK — Medicinal Cannabis UK',
+  description: 'Patient-led support for UK prescription cannabis patients. Free guidance, resources, and community from a Community Interest Company.',
+  openGraph: {
+    title: 'MCUK — Medicinal Cannabis UK',
+    description: 'Patient-led support for UK prescription cannabis patients. Free guidance, resources, and community from a Community Interest Company.',
+  },
+}
+
 export default function Home() {
   return (
     <>
