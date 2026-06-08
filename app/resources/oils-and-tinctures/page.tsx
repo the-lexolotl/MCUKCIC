@@ -1,4 +1,4 @@
-import ResourcePage from '../../../components/ResourcePage'
+import ResourcePage from '../ResourcePage'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
