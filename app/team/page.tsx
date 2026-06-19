@@ -33,30 +33,45 @@ export default function Team() {
 
               <div className="team-card">
                 <div className="team-photo placeholder-photo">
-                  <span>JD</span>
+                  <span>JH</span>
                 </div>
                 <div className="team-info">
-                  <h3>Jane Doe</h3>
-                  <div className="team-role">Founder &amp; Director</div>
-                  <p>Placeholder bio — Jane has been a prescribed cannabis patient since 2020 and founded MCUK to provide the support she wished had existed when she started her journey.</p>
+                  <h3>Jane Hitchliffe</h3>
+                  <div className="team-role">Founder &amp; Head of Patient Advocacy</div>
+                  <p>Bio coming soon.</p>
                   <div className="team-tags">
-                    <span className="team-tag">Chronic pain</span>
                     <span className="team-tag">Patient advocate</span>
+                    <span className="team-tag">Founder</span>
                   </div>
                 </div>
               </div>
 
               <div className="team-card">
                 <div className="team-photo placeholder-photo">
-                  <span>JS</span>
+                  <span>LW</span>
                 </div>
                 <div className="team-info">
-                  <h3>John Smith</h3>
-                  <div className="team-role">Director of Operations</div>
-                  <p>Placeholder bio — John oversees the day-to-day running of MCUK and leads our community engagement work, bringing a background in patient advocacy and voluntary sector management.</p>
+                  <h3>Lex Wolfe</h3>
+                  <div className="team-role">Founder &amp; Head of Digital Systems</div>
+                  <p>Lex co-founded MCUK as a prescribed cannabis patient who wanted the kind of practical, organised support that wasn&apos;t there when he needed it. Today Lex builds and runs the tools — the website, social channels, and internal processes — that keep MCUK running smoothly.</p>
+                  <div className="team-tags">
+                    <span className="team-tag">Web &amp; systems</span>
+                    <span className="team-tag">Founder</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="team-card">
+                <div className="team-photo placeholder-photo">
+                  <span>LB</span>
+                </div>
+                <div className="team-info">
+                  <h3>Lee Bailey</h3>
+                  <div className="team-role">Chair of Operations</div>
+                  <p>Bio coming soon.</p>
                   <div className="team-tags">
                     <span className="team-tag">Operations</span>
-                    <span className="team-tag">Community</span>
+                    <span className="team-tag">Chair</span>
                   </div>
                 </div>
               </div>

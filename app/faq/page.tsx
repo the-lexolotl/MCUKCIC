@@ -53,7 +53,7 @@ export default async function FAQ() {
             <h1>Frequently asked questions</h1>
             <p className="hero-sub">
               Answers to the questions we hear most often. Can&apos;t find what you&apos;re looking for?{' '}
-              <Link href="/contact" style={{color:'#84a38e'}}>Get in touch</Link> and we&apos;ll help.
+              <Link href="/contact" style={{color:'#84a38e'}}>Get in touch </Link> and we&apos;ll help.
             </p>
           </div>
         </section>
