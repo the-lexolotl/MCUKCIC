@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import NewsletterSignup from './NewsletterSignup'
 
 export default function Footer() {
   return (
@@ -28,9 +29,12 @@ export default function Footer() {
           </div>
           <div className="footer-links">
             <h5>Community</h5>
-            <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener">Facebook</a>
             <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener">Discord</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.youtube.com/channel/UCxsbiTttOJZhiF281Etcx7w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+          <div className="footer-newsletter">
+            <NewsletterSignup variant="compact" />
           </div>
         </div>
         <div className="footer-bottom">

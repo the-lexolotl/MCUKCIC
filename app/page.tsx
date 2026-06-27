@@ -22,7 +22,7 @@ export default function Home() {
         {/* HERO */}
         <section className="hero">
           <div className="container">
-            <div className="hero-tag">Patient-led · UK registered CIC</div>
+            <div className="hero-tag">Patient-led · UK Based</div>
             <h1>You're not alone on your <span className="highlight">cannabis medicine</span> journey</h1>
             <p className="hero-sub">MCUK supports UK patients navigating prescription cannabis — from your first appointment to long-term wellbeing.</p>
             <div className="hero-buttons">
@@ -84,7 +84,7 @@ export default function Home() {
             <h2>Join our community</h2>
             <p className="section-sub">We're building spaces where UK cannabis patients can find support, share experiences, and stay informed.</p>
             <div className="social-cards">
-              <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer" className="social-card">
+              <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="social-card">
                 <div className="social-icon" style={{background:'#eef2fb', color:'#3b5998'}}>f</div>
                 <div>
                   <h4>Facebook</h4>
@@ -98,7 +98,7 @@ export default function Home() {
                   <p>Real-time chat, support channels, and community events</p>
                 </div>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-card">
+              <a href="https://www.youtube.com/channel/UCxsbiTttOJZhiF281Etcx7w" target="_blank" rel="noopener noreferrer" className="social-card">
                 <div className="social-icon" style={{background:'#feeeed', color:'#ff0000'}}>&#9654;</div>
                 <div>
                   <h4>YouTube</h4>

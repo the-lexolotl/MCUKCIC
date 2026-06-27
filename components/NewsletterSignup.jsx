@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 
-export default function NewsletterSignup() {
+export default function NewsletterSignup({ variant = 'card' }) {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [message, setMessage] = useState('');
+
+  const isCompact = variant === 'compact';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ export default function NewsletterSignup() {
 
       if (res.ok) {
         setStatus('success');
-        setMessage('Thank you for signing up! Please check your inbox to confirm your subscription.');
+        setMessage('Thanks! Please check your inbox to confirm.');
         setEmail('');
         setFirstName('');
       } else {
@@ -36,6 +38,82 @@ export default function NewsletterSignup() {
     }
   };
 
+  // ---------- COMPACT (footer) VARIANT ----------
+  if (isCompact) {
+    return (
+      <div>
+        <h5 style={{
+          fontFamily: "'DM Sans', sans-serif",
+          color: '#b0b8cc',
+          fontSize: '0.95rem',
+          fontWeight: 600,
+          marginBottom: '0.6rem',
+          textTransform: 'uppercase',
+          letterSpacing: '0.04em',
+        }}>
+          Stay updated
+        </h5>
+
+        {status === 'success' ? (
+          <p style={{
+            fontFamily: "'DM Sans', sans-serif",
+            color: '#b8d4c0',
+            fontSize: '0.9rem',
+            lineHeight: 1.5,
+          }}>
+            {message}
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              required
+              aria-label="Email address"
+              style={compactInputStyle}
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              style={{
+                backgroundColor: status === 'loading' ? '#6b8a76' : '#84a38e',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '0.6rem 1rem',
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+              }}
+            >
+              {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
+            </button>
+
+            {status === 'error' && (
+              <p style={{ color: '#e3a671', fontFamily: "'DM Sans', sans-serif", fontSize: '0.8rem' }}>
+                {message}
+              </p>
+            )}
+
+            <p style={{
+              fontSize: '0.72rem',
+              color: '#a8b3c2',
+              fontFamily: "'DM Sans', sans-serif",
+              lineHeight: 1.5,
+              marginTop: '0.2rem',
+            }}>
+              No spam. Unsubscribe anytime.
+            </p>
+          </form>
+        )}
+      </div>
+    );
+  }
+
+  // ---------- CARD (homepage / page section) VARIANT ----------
   return (
     <section style={{
       backgroundColor: '#f0f4f1',
@@ -157,6 +235,19 @@ const inputStyle = {
   border: '1.5px solid #c8d5cb',
   fontFamily: "'DM Sans', sans-serif",
   fontSize: '1rem',
+  color: '#2a3559',
+  backgroundColor: '#ffffff',
+  outline: 'none',
+  boxSizing: 'border-box',
+};
+
+const compactInputStyle = {
+  width: '100%',
+  padding: '0.6rem 0.85rem',
+  borderRadius: '8px',
+  border: '1px solid #4a5a78',
+  fontFamily: "'DM Sans', sans-serif",
+  fontSize: '0.9rem',
   color: '#2a3559',
   backgroundColor: '#ffffff',
   outline: 'none',

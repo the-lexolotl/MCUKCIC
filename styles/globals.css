@@ -367,8 +367,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+  gap: 2.5rem;
   margin-bottom: 3rem;
 }
 
@@ -398,6 +398,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .footer-links a:hover { opacity: 1; }
+
+.footer-newsletter h5 {
+  color: #b8c0d8;
+}
+
+.footer-newsletter form {
+  max-width: 260px;
+}
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
