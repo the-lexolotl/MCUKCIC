@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import NewsletterPopup from '../components/NewsletterPopup'
 import Link from 'next/link'
 
 import type { Metadata } from 'next'
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Nav />
+      <NewsletterPopup />
       <main>
 
         {/* HERO */}
