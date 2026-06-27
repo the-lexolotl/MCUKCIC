@@ -66,6 +66,14 @@ export default function NewsletterSignup({ variant = 'card' }) {
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="First name (optional)"
+              aria-label="First name"
+              style={compactInputStyle}
+            />
+            <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

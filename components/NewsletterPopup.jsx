@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
 export default function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [message, setMessage] = useState('');
 
@@ -49,7 +50,7 @@ export default function NewsletterPopup() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, firstName: '' }),
+        body: JSON.stringify({ email, firstName }),
       });
 
       const data = await res.json();
@@ -184,6 +185,26 @@ export default function NewsletterPopup() {
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First name (optional)"
+                aria-label="First name"
+                style={{
+                  width: '100%',
+                  padding: '0.8rem 1rem',
+                  borderRadius: '8px',
+                  border: '1.5px solid #c8d5cb',
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: '0.95rem',
+                  color: '#2a3559',
+                  backgroundColor: '#ffffff',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                }}
+              />
+
               <input
                 type="email"
                 value={email}
