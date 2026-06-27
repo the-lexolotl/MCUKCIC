@@ -189,7 +189,7 @@ export default function NewsletterPopup() {
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                placeholder="First name (optional)"
+                placeholder="First name"
                 aria-label="First name"
                 style={{
                   width: '100%',
