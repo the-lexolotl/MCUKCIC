@@ -220,7 +220,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
               <div className="sidebar-card sidebar-card--tinted">
                 <h4>Need more help?</h4>
                 <p>Our community is full of experienced patients who can offer peer support and advice.</p>
-                <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Join Facebook group</a>
+                <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Join Facebook group</a>
                 <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Join Discord</a>
               </div>
 

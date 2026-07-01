@@ -266,7 +266,7 @@ export default function Contact() {
 
               <div className="contact-info-card">
                 <h4>Find us online</h4>
-                <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer" className="contact-social">
+                <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="contact-social">
                   <div className="contact-social-icon" style={{background:'#eef2fb', color:'#3b5998'}}>f</div>
                   <span>Facebook community</span>
                 </a>

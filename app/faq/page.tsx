@@ -91,7 +91,7 @@ export default async function FAQ() {
                 <h4>Still have questions?</h4>
                 <p>Our community is full of experienced patients who may be able to help, or you can contact us directly.</p>
                 <Link href="/contact" className="sidebar-btn">Contact us</Link>
-                <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Ask in Facebook group</a>
+                <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Ask in Facebook group</a>
               </div>
             </aside>
 

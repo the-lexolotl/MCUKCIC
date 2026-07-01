@@ -232,7 +232,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
 
               <div className="sidebar-card">
                 <h4>Join the community</h4>
-                <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Facebook group</a>
+                <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Facebook group</a>
                 <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="sidebar-btn">Discord server</a>
               </div>
 
