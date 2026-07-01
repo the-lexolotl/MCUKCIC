@@ -37,11 +37,11 @@ export default function Team() {
                 </div>
                 <div className="team-info">
                   <h3>Jane Hitchliffe</h3>
-                  <div className="team-role">Founder &amp; Head of Patient Advocacy</div>
-                  <p>Bio coming soon.</p>
+                  <div className="team-role">Head of Patient Advocacy</div>
+                  <p>Jane came to medicinal cannabis through her own experience of chronic pain, navigating a system that was often difficult to understand and even harder to access. That journey shaped her belief that patients deserve better — clearer information, stronger voices, and a community that truly has their back. As Head of Patient Advocacy at MCUK, she leads with that lived experience at the forefront, championing education, access, and patient-led change across the UK.</p>
                   <div className="team-tags">
                     <span className="team-tag">Patient advocate</span>
-                    <span className="team-tag">Founder</span>
+                    <span className="team-tag">Chronic pain</span>
                   </div>
                 </div>
               </div>
@@ -52,11 +52,11 @@ export default function Team() {
                 </div>
                 <div className="team-info">
                   <h3>Lex Wolfe</h3>
-                  <div className="team-role">Founder &amp; Head of Digital Systems</div>
-                  <p>Lex co-founded MCUK as a prescribed cannabis patient who wanted the kind of practical, organised support that wasn&apos;t there when he needed it. Today Lex builds and runs the tools — the website, social channels, and internal processes — that keep MCUK running smoothly.</p>
+                  <div className="team-role">Head of Digital Systems</div>
+                  <p>As Head of Digital Systems at MCUK, Lex builds and maintains everything that keeps the organisation running behind the scenes — the website, social channels, and internal processes that help patients find what they need. Living with Ehlers-Danlos syndrome, ADHD, and PTSD brought him to medicinal cannabis, and that lived experience shapes his commitment to making sure MCUK is accessible, well-organised, and genuinely useful for the people it serves.</p>
                   <div className="team-tags">
                     <span className="team-tag">Web &amp; systems</span>
-                    <span className="team-tag">Founder</span>
+                    <span className="team-tag">Digital</span>
                   </div>
                 </div>
               </div>
@@ -68,139 +68,10 @@ export default function Team() {
                 <div className="team-info">
                   <h3>Lee Bailey</h3>
                   <div className="team-role">Chair of Operations</div>
-                  <p>Bio coming soon.</p>
+                  <p>Lee&apos;s relationship with cannabis spans over 35 years — from early curiosity and time in Amsterdam to a deepening interest in its medicinal potential and cultural significance. After a 25+ year career in logistics and leadership with the Ministry of Defence, he became a legal medicinal cannabis patient in 2025, an experience that cemented his commitment to improving patient access and challenging stigma in the UK. Now Chair of Operations at MCUK, Lee brings that breadth of experience to building an organisation that genuinely puts patients first.</p>
                   <div className="team-tags">
                     <span className="team-tag">Operations</span>
                     <span className="team-tag">Chair</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ADMIN */}
-        <section className="section section-tinted">
-          <div className="container">
-            <div className="section-label">Administration</div>
-            <h2>Our admin team</h2>
-            <p className="section-sub">The people who keep MCUK running — managing communications, content, and community support behind the scenes.</p>
-            <div className="team-grid">
-
-              <div className="team-card">
-                <div className="team-photo placeholder-photo">
-                  <span>AJ</span>
-                </div>
-                <div className="team-info">
-                  <h3>Alex Johnson</h3>
-                  <div className="team-role">Community Manager</div>
-                  <p>Placeholder bio — Alex manages our online communities across Facebook and Discord, ensuring members feel welcomed, heard, and supported.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Community</span>
-                    <span className="team-tag">Social media</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="team-card">
-                <div className="team-photo placeholder-photo">
-                  <span>SW</span>
-                </div>
-                <div className="team-info">
-                  <h3>Sam Wilson</h3>
-                  <div className="team-role">Content &amp; Communications</div>
-                  <p>Placeholder bio — Sam leads on content creation, blog editing, and external communications, making sure MCUK speaks clearly and honestly to its community.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Content</span>
-                    <span className="team-tag">Writing</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="team-card">
-                <div className="team-photo placeholder-photo">
-                  <span>RB</span>
-                </div>
-                <div className="team-info">
-                  <h3>Riley Brown</h3>
-                  <div className="team-role">Patient Support Coordinator</div>
-                  <p>Placeholder bio — Riley coordinates our patient support services and is the first point of contact for members seeking guidance on accessing prescription cannabis.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Patient support</span>
-                    <span className="team-tag">C.A.L.S.</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ADVISERS */}
-        <section className="section">
-          <div className="container">
-            <div className="section-label">Advisers</div>
-            <h2>Our advisory panel</h2>
-            <p className="section-sub">Our advisers bring professional expertise in medicine, law, policy, and patient advocacy — helping us make sure everything we do is accurate, safe, and effective.</p>
-            <div className="team-grid adviser-grid">
-
-              <div className="team-card team-card--adviser">
-                <div className="team-photo placeholder-photo placeholder-photo--sm">
-                  <span>DR</span>
-                </div>
-                <div className="team-info">
-                  <h3>Dr. Placeholder</h3>
-                  <div className="team-role">Medical Adviser</div>
-                  <p>Placeholder — specialist in cannabis-based medicine with a background in pain management and neurology.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Medicine</span>
-                    <span className="team-tag">Pain management</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="team-card team-card--adviser">
-                <div className="team-photo placeholder-photo placeholder-photo--sm">
-                  <span>LP</span>
-                </div>
-                <div className="team-info">
-                  <h3>L. Placeholder</h3>
-                  <div className="team-role">Legal Adviser</div>
-                  <p>Placeholder — specialist in healthcare and drug policy law, advising on patient rights and equality legislation.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Law</span>
-                    <span className="team-tag">Patient rights</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="team-card team-card--adviser">
-                <div className="team-photo placeholder-photo placeholder-photo--sm">
-                  <span>PP</span>
-                </div>
-                <div className="team-info">
-                  <h3>P. Placeholder</h3>
-                  <div className="team-role">Policy Adviser</div>
-                  <p>Placeholder — experienced in health policy and NHS engagement, supporting our advocacy and consultation work.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Policy</span>
-                    <span className="team-tag">NHS</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="team-card team-card--adviser">
-                <div className="team-photo placeholder-photo placeholder-photo--sm">
-                  <span>PA</span>
-                </div>
-                <div className="team-info">
-                  <h3>P. Adviser</h3>
-                  <div className="team-role">Patient Advocacy Adviser</div>
-                  <p>Placeholder — long-term patient advocate with experience representing the cannabis medicine community at national level.</p>
-                  <div className="team-tags">
-                    <span className="team-tag">Advocacy</span>
-                    <span className="team-tag">Policy</span>
                   </div>
                 </div>
               </div>
