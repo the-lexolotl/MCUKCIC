@@ -38,7 +38,7 @@ export default function Team() {
                     <span>JH</span>
                   </div>
                   <div>
-                    <h3 className="team-row-name">Jane Hntchliffe</h3>
+                    <h3 className="team-row-name">Jane Hinchliffe</h3>
                     <div className="team-role">Founder &amp; Managing Director</div>
                     <div className="team-tags">
                       <span className="team-tag">Chronic pain</span>
