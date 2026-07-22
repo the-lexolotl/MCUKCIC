@@ -39,34 +39,16 @@ export default function Team() {
                   </div>
                   <div>
                     <h3 className="team-row-name">Jane Hitchliffe</h3>
-                    <div className="team-role">Head of Patient Advocacy</div>
+                    <div className="team-role">Founder &amp; Managing Director</div>
                     <div className="team-tags">
                       <span className="team-tag">Patient advocate</span>
                       <span className="team-tag">Chronic pain</span>
+                      <span className="team-tag">Managing Director</span>
                     </div>
                   </div>
                 </div>
                 <div className="team-row-bio">
-                  <p>Jane came to medicinal cannabis through her own experience of chronic pain, navigating a system that was often difficult to understand and even harder to access. That journey shaped her belief that patients deserve better — clearer information, stronger voices, and a community that truly has their back. As Head of Patient Advocacy at MCUK, she leads with that lived experience at the forefront, championing education, access, and patient-led change across the UK.</p>
-                </div>
-              </div>
-
-              <div className="team-row">
-                <div className="team-row-identity">
-                  <div className="team-photo placeholder-photo">
-                    <span>LW</span>
-                  </div>
-                  <div>
-                    <h3 className="team-row-name">Lex Wolfe</h3>
-                    <div className="team-role">Head of Digital Systems</div>
-                    <div className="team-tags">
-                      <span className="team-tag">Web &amp; systems</span>
-                      <span className="team-tag">Digital</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-row-bio">
-                  <p>As Head of Digital Systems at MCUK, Lex builds and maintains everything that keeps the organisation running behind the scenes — the website, social channels, and internal processes that help patients find what they need. Living with Ehlers-Danlos syndrome, ADHD, and PTSD brought him to medicinal cannabis, and that lived experience shapes his commitment to making sure MCUK is accessible, well-organised, and genuinely useful for the people it serves.</p>
+                  <p>Jane came to medicinal cannabis through her own experience of chronic pain, navigating a system that was often difficult to understand and even harder to access. That journey shaped her belief that patients deserve better — clearer information, stronger voices, and a community that truly has their back. As Founder and Managing Director of MCUK, she leads with that lived experience at the forefront, championing education, access, and patient-led change across the UK.</p>
                 </div>
               </div>
 
@@ -77,15 +59,35 @@ export default function Team() {
                   </div>
                   <div>
                     <h3 className="team-row-name">Lee Bailey</h3>
-                    <div className="team-role">Chair of Operations</div>
+                    <div className="team-role">Deputy Managing Director</div>
                     <div className="team-tags">
+                      <span className="team-tag">PTSD</span>
                       <span className="team-tag">Operations</span>
-                      <span className="team-tag">Chair</span>
                     </div>
                   </div>
                 </div>
                 <div className="team-row-bio">
-                  <p>Lee&apos;s relationship with cannabis spans over 35 years — from early curiosity and time in Amsterdam to a deepening interest in its medicinal potential and cultural significance. After a 25+ year career in logistics and leadership with the Ministry of Defence, he became a legal medicinal cannabis patient in 2025, an experience that cemented his commitment to improving patient access and challenging stigma in the UK. Now Chair of Operations at MCUK, Lee brings that breadth of experience to building an organisation that genuinely puts patients first.</p>
+                  <p>Lee&apos;s relationship with cannabis spans over 35 years — from early curiosity as a teenager and time in Amsterdam, to a deepening interest in its medicinal potential and cultural significance. He now uses it to treat his PTSD, and became a legal medicinal cannabis patient in 2025, an experience that cemented his commitment to improving the patient journey and challenging stigma in the UK. With 14 years in logistics, supply chain, and leadership with the Ministry of Defence alongside a varied career across other sectors, Lee brings a unique perspective to MCUK. Now Deputy Managing Director, he channels that breadth of experience into building an organisation that genuinely puts patients first.</p>
+                </div>
+              </div>
+
+              <div className="team-row">
+                <div className="team-row-identity">
+                  <div className="team-photo placeholder-photo">
+                    <span>LW</span>
+                  </div>
+                  <div>
+                    <h3 className="team-row-name">Lex Wolfe</h3>
+                    <div className="team-role">Co-founder &amp; Head of Digital Systems</div>
+                    <div className="team-tags">
+                      <span className="team-tag">Digital Systems</span>
+                      <span className="team-tag">Chronic illness</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="team-row-bio">
+                  <p>Living with Ehlers-Danlos syndrome, ADHD, and PTSD, Lex brings lived experience to his work alongside a professional background in clinical toxicology specialising in cannabis. He has been a legal medicinal cannabis patient since 2019 — among the first following the UK law change.</p>
+                  <p style={{marginTop: '1rem'}}>As Co-founder and Head of Digital Systems at MCUK, he builds and maintains the website, social platforms, and internal processes that help patients reliably find the support they need. That combination of personal insight and specialist knowledge underpins his commitment to making MCUK accurate, accessible, and genuinely useful for the community it serves.</p>
                 </div>
               </div>
 
