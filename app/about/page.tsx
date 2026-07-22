@@ -105,7 +105,7 @@ export default function About() {
               <div className="activity-item">
                 <div className="activity-number">02</div>
                 <div className="activity-body">
-                  <h3>C.A.L.S. — Cannabis and Liaison Support Services <span className="badge">In development</span></h3>
+                  <h3>C.A.L.S. — Cannabis Access and Liaison Support Services <span className="badge">In development</span></h3>
                   <p>A volunteer-based patient support programme currently in development. Trained, safeguarded volunteers will accompany patients to healthcare appointments, help facilitate effective communication with clinicians, and provide practical and emotional support throughout the healthcare process.</p>
                 </div>
               </div>
