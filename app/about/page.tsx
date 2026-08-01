@@ -154,7 +154,10 @@ export default function About() {
             <p>A Community Interest Company (CIC) is a type of limited company specifically designed for organisations that exist to benefit the community rather than generate private profit. Unlike a standard limited company, a CIC is legally bound by an asset lock — meaning that all surplus and assets must remain dedicated to the community benefit objectives the organisation was founded to serve.</p>
             <p>We chose the CIC structure because it reflects exactly what MCUK is: an organisation that exists solely for its patients and community, with formal accountability to prove it.</p>
             <div className="info-box">
-              <p><strong>Medicinal Cannabis UK CIC</strong> is registered in England and Wales. Company number: 17373828. Registered address: Union House, 111 New Union Street, Coventry, CV1 2NT. If you have questions about our structure or governance, please <Link href="/contact">get in touch</Link>.</p>
+              <p><strong>Medicinal Cannabis UK CIC</strong> is registered in England and Wales. </p>
+              <p><strong>Company number:</strong> 17373828. </p>
+              <p><strong>Registered address:</strong> Union House, 111 New Union Street, Coventry, CV1 2NT. </p>
+              <p>If you have questions about our structure or governance, please <Link href="/contact">get in touch</Link>.</p>
             </div>
           </div>
         </section>
