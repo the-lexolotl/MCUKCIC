@@ -24,7 +24,7 @@ export default function Home() {
         {/* HERO */}
         <section className="hero">
           <div className="container">
-            <div className="hero-tag">Patient-led · UK Based</div>
+            <div className="hero-tag">Patient-led · UK Resistered CIC</div>
             <h1>You're not alone on your <span className="highlight">cannabis medicine</span> journey</h1>
             <p className="hero-sub">MCUK supports UK patients navigating prescription cannabis — from your first appointment to long-term wellbeing.</p>
             <div className="hero-buttons">
