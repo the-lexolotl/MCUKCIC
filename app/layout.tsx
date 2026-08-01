@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     'cannabis prescription UK',
     'medical cannabis support',
   ],
-  authors: [{ name: 'MCUK — Medicinal Cannabis UK CIC' }],
-  creator: 'MCUK CIC',
-  publisher: 'MCUK CIC',
+  authors: [{ name: 'Medicinal Cannabis UK CIC' }],
+  creator: 'Medicinal Cannabis UK CIC',
+  publisher: 'Medicinal Cannabis UK CIC',
   openGraph: {
     type: 'website',
     locale: 'en_GB',

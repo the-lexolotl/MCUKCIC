@@ -30,7 +30,7 @@ export default function About() {
             <h2>Where we started</h2>
             <p>MCUK began on 28 October 2021, when a small group of prescribed cannabis patients came together on Facebook with a simple idea: that patients supporting each other could make a real difference.</p>
             <p>What started as a community space quickly grew into something more. Members shared experiences, helped each other navigate clinics and prescriptions, and spoke openly about how cannabis medicine was affecting their lives — for better and for worse. That honesty, and that sense of mutual support, remains at the heart of everything we do.</p>
-            <p>Today, MCUK is in the process of registering as a Community Interest Company — a formal recognition of our commitment to putting patients and community benefit above all else.</p>
+            <p>Today, MCUK is a registered Community Interest Company — a formal recognition of our commitment to putting patients and community benefit above all else.</p>
           </div>
         </section>
 
@@ -154,7 +154,7 @@ export default function About() {
             <p>A Community Interest Company (CIC) is a type of limited company specifically designed for organisations that exist to benefit the community rather than generate private profit. Unlike a standard limited company, a CIC is legally bound by an asset lock — meaning that all surplus and assets must remain dedicated to the community benefit objectives the organisation was founded to serve.</p>
             <p>We chose the CIC structure because it reflects exactly what MCUK is: an organisation that exists solely for its patients and community, with formal accountability to prove it.</p>
             <div className="info-box">
-              <p><strong>MCUK CIC is currently in the process of registration.</strong> Our company number and registration details will be published here once confirmed. If you have questions about our structure or governance, please <Link href="/contact">get in touch</Link>.</p>
+              <p><strong>Medicinal Cannabis UK CIC</strong> is registered in England and Wales. Company number: 17373828. Registered address: Union House, 111 New Union Street, Coventry, CV1 2NT. If you have questions about our structure or governance, please <Link href="/contact">get in touch</Link>.</p>
             </div>
           </div>
         </section>
