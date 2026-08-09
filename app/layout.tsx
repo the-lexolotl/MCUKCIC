@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import CookieBanner from '../components/CookieBanner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mcukcic.co.uk'),
@@ -65,6 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <CookieBanner />
       </body>
     </html>
   )

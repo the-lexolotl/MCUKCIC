@@ -387,8 +387,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
-  gap: 2.5rem;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
