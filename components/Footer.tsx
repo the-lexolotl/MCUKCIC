@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import NewsletterSignup from './NewsletterSignup'
 
 export default function Footer() {
   return (
-    <footer className="footer">
+      <footer className="footer">
       <div className="container">
         <div className="footer-inner">
           <div className="footer-brand">
@@ -41,6 +42,9 @@ export default function Footer() {
             <Link href="/policies/complaints">Complaints</Link>
             <Link href="/policies/safeguarding">Safeguarding</Link>
           </div>
+          <div className="footer-newsletter">
+            <NewsletterSignup variant="compact" />
+          </div>
         </div>
         <div className="footer-bottom">
           <p>This site does not provide medical advice. Always consult your prescribing clinician.</p>
@@ -48,5 +52,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+    )
 }
