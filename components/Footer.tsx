@@ -15,7 +15,7 @@ export default function Footer() {
               height={52}
               className="logo-footer-img"
             />
-            <p>Medicinal Cannabis UK CIC </p>
+            <p><strong>Medicinal Cannabis UK CIC</strong></p>
             <p>a patient-led organisation supporting UK prescription cannabis patients.</p>
             <p className="footer-note">Registered in England and Wales · Company no. 17373828</p>
           </div>
