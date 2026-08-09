@@ -1,17 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Lora } from 'next/font/google'
 import '../styles/globals.css'
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
-})
-
-const lora = Lora({
-  subsets: ['latin'],
-  variable: '--font-lora',
-  style: ['italic'],
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mcukcic.co.uk'),
@@ -75,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${lora.variable}`}>
+      <body>
         {children}
       </body>
     </html>
