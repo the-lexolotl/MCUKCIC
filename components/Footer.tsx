@@ -27,13 +27,10 @@ export default function Footer() {
             <Link href="/contact">Contact</Link>
           </div>
           <div className="footer-links">
-            <h5>Site</h5>
-            <Link href="/about">About</Link>
-            <Link href="/team">Our team</Link>
-            <Link href="/resources">Resources</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/faq">FAQ</Link>
-            <Link href="/contact">Contact</Link>
+            <h5>Community</h5>
+            <a href="https://www.facebook.com/groups/175157768142025" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener">Discord</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
           </div>
           <div className="footer-links">
             <h5>Legal</h5>
