@@ -28,26 +28,25 @@
    ======================== */
 
 [data-theme="dark"] {
-  --bg: #1a2340;
-  --bg-tinted: #1e2a4a;
-  --surface: #243058;
-  --border: #2e3d6e;
-  --border-light: #2e3d6e;
-  --text-primary: #e8ecf8;
-  --text-secondary: #a8b4d0;
-  --text-muted: #6878a8;
-  --green: #9ab8a4;
-  --green-bg: #1e3028;
-  --green-border: #2a4a34;
-  --violet: #9488b0;
-  --violet-bg: #251e38;
-  --orange: #e3a671;
-  --orange-bg: #2e1e0a;
+  --bg: #2a3559;
+  --bg-tinted: #243050;
+  --surface: #303d65;
+  --border: #3d4e7a;
+  --border-light: #374572;
+  --text-primary: #f7f7f9;
+  --text-secondary: #bbbfc7;
+  --text-muted: #7a83a0;
+  --green: #84a38e;
+  --green-bg: #2a3d32;
+  --green-border: #3a5442;
+  --violet: #ae7eae;
+  --violet-bg: #3a2d45;
+  --orange: #e6ae7e;
+  --orange-bg: #3a2a18;
   --navy: #2a3559;
-  --footer-bg: #111828;
-  --footer-text: #8898c0;
+  --footer-bg: #1e2840;
+  --footer-text: #bbbfc7;
 }
-
 /* ========================
    SELF-HOSTED FONTS
    ======================== */
