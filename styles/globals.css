@@ -1,4 +1,54 @@
 /* ========================
+   CSS VARIABLES — LIGHT MODE
+   ======================== */
+
+:root {
+  --bg: #f7f7f9;
+  --bg-tinted: #eef2ee;
+  --surface: #ffffff;
+  --border: #dde3ee;
+  --border-light: #e4e8f0;
+  --text-primary: #2a3559;
+  --text-secondary: #6b7494;
+  --text-muted: #b0b8cc;
+  --green: #84a38e;
+  --green-bg: #eaf0ec;
+  --green-border: #c8d8cb;
+  --violet: #75628f;
+  --violet-bg: #f0edf6;
+  --orange: #e3a671;
+  --orange-bg: #fdf3eb;
+  --navy: #2a3559;
+  --footer-bg: #2a3559;
+  --footer-text: #b8c0d8;
+}
+
+/* ========================
+   CSS VARIABLES — DARK MODE
+   ======================== */
+
+[data-theme="dark"] {
+  --bg: #1a2340;
+  --bg-tinted: #1e2a4a;
+  --surface: #243058;
+  --border: #2e3d6e;
+  --border-light: #2e3d6e;
+  --text-primary: #e8ecf8;
+  --text-secondary: #a8b4d0;
+  --text-muted: #6878a8;
+  --green: #9ab8a4;
+  --green-bg: #1e3028;
+  --green-border: #2a4a34;
+  --violet: #9488b0;
+  --violet-bg: #251e38;
+  --orange: #e3a671;
+  --orange-bg: #2e1e0a;
+  --navy: #2a3559;
+  --footer-bg: #111828;
+  --footer-text: #8898c0;
+}
+
+/* ========================
    SELF-HOSTED FONTS
    ======================== */
 
@@ -29,10 +79,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: #f7f7f9;
-  color: #2a3559;
+  background: var(--bg);
+  color: var(--text-primary);
   font-size: 16px;
   line-height: 1.7;
+  transition: background 0.2s, color 0.2s;
 }
 
 img { max-width: 100%; display: block; }
@@ -53,7 +104,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .section-tinted {
-  background: #eef2ee;
+  background: var(--bg-tinted);
 }
 
 .section-label {
@@ -61,12 +112,12 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #84a38e;
+  color: var(--green);
   margin-bottom: 0.5rem;
 }
 
 .section-sub {
-  color: #6b7494;
+  color: var(--text-secondary);
   max-width: 560px;
   margin-top: 0.5rem;
   margin-bottom: 2.5rem;
@@ -76,18 +127,19 @@ h1 { font-size: 2.8rem; font-weight: 600; line-height: 1.2; }
 h2 { font-size: 2rem; font-weight: 600; line-height: 1.3; }
 h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.5rem; }
 h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.25rem; }
-h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; color: #b0b8cc; }
+h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; color: var(--text-muted); }
 
 /* ========================
    NAVIGATION
    ======================== */
 
 .nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e4e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background 0.2s;
 }
 
 .nav-inner {
@@ -127,12 +179,18 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .nav-links a {
   font-size: 0.9rem;
-  color: #2a3559;
+  color: var(--text-primary);
   opacity: 0.75;
   transition: opacity 0.2s;
 }
 
 .nav-links a:hover { opacity: 1; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
 .nav-cta {
   background: #e3a671;
@@ -153,26 +211,65 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: #2a3559;
+  color: var(--text-primary);
   margin-left: auto;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: var(--bg-tinted);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+
+.theme-toggle--mobile {
+  width: auto;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
 }
 
 /* Mobile menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: #fff;
-  border-bottom: 1px solid #e4e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
   padding: 1rem 2rem;
   gap: 1rem;
+  transition: background 0.2s;
 }
 
 .mobile-menu.open { display: flex; }
 
 .mobile-menu a {
   font-size: 1rem;
-  color: #2a3559;
+  color: var(--text-primary);
   opacity: 0.8;
+}
+
+.mobile-menu-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.25rem;
 }
 
 .mobile-cta {
@@ -196,8 +293,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .hero-tag {
   display: inline-block;
-  background: #eaf0ec;
-  color: #84a38e;
+  background: var(--green-bg);
+  color: var(--green);
   font-size: 0.8rem;
   font-weight: 500;
   padding: 5px 16px;
@@ -208,11 +305,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .hero h1 { margin-bottom: 1.25rem; }
 
-.highlight { color: #84a38e; }
+.highlight { color: var(--green); }
 
 .hero-sub {
   font-size: 1.15rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   max-width: 540px;
   margin: 0 auto 2.5rem;
 }
@@ -226,7 +323,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .btn-primary {
-  background: #84a38e;
+  background: var(--green);
   color: #fff;
   padding: 13px 32px;
   border-radius: 26px;
@@ -239,8 +336,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .btn-secondary {
   background: transparent;
-  color: #2a3559;
-  border: 1.5px solid #c5cbe0;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
   padding: 13px 32px;
   border-radius: 26px;
   font-size: 1rem;
@@ -248,7 +345,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   transition: border-color 0.2s, color 0.2s;
 }
 
-.btn-secondary:hover { border-color: #84a38e; color: #84a38e; }
+.btn-secondary:hover { border-color: var(--green); color: var(--green); }
 
 .trust-bar {
   display: flex;
@@ -256,7 +353,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   gap: 2rem;
   flex-wrap: wrap;
   font-size: 0.85rem;
-  color: #75628f;
+  color: var(--violet);
 }
 
 .trust-bar span::before {
@@ -276,10 +373,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .card {
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   padding: 1.75rem;
+  transition: background 0.2s;
 }
 
 .card-icon {
@@ -293,15 +391,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   margin-bottom: 1rem;
 }
 
-.icon-green { background: #eaf0ec; color: #84a38e; }
-.icon-violet { background: #f0edf6; color: #75628f; }
-.icon-orange { background: #fdf3eb; color: #e3a671; }
+.icon-green { background: var(--green-bg); color: var(--green); }
+.icon-violet { background: var(--violet-bg); color: var(--violet); }
+.icon-orange { background: var(--orange-bg); color: var(--orange); }
 
-.card p { font-size: 0.9rem; color: #6b7494; margin-bottom: 1rem; }
+.card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
 
 .card-link {
   font-size: 0.875rem;
-  color: #84a38e;
+  color: var(--green);
   font-weight: 500;
   transition: color 0.2s;
 }
@@ -313,7 +411,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
    ======================== */
 
 .testimonial {
-  border-left: 3px solid #84a38e;
+  border-left: 3px solid var(--green);
   padding: 1.25rem 1.75rem;
   border-radius: 0 12px 12px 0;
   max-width: 680px;
@@ -323,14 +421,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 1.15rem;
-  color: #2a3559;
+  color: var(--text-primary);
   line-height: 1.7;
   margin-bottom: 0.75rem;
 }
 
 .testimonial footer {
   font-size: 0.875rem;
-  color: #84a38e;
+  color: var(--green);
 }
 
 /* ========================
@@ -348,15 +446,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
 }
 
 .social-card:hover {
-  border-color: #84a38e;
+  border-color: var(--green);
   transform: translateY(-2px);
 }
 
@@ -372,17 +470,18 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   flex-shrink: 0;
 }
 
-.social-card h4 { color: #2a3559; }
-.social-card p { font-size: 0.85rem; color: #6b7494; margin: 0; }
+.social-card h4 { color: var(--text-primary); }
+.social-card p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
 
 /* ========================
    FOOTER
    ======================== */
 
 .footer {
-  background: #2a3559;
-  color: #b8c0d8;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 4rem 0 2rem;
+  transition: background 0.2s;
 }
 
 .footer-inner {
@@ -411,7 +510,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .footer-links a {
   font-size: 0.875rem;
-  color: #b8c0d8;
+  color: var(--footer-text);
   margin-bottom: 0.5rem;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -420,7 +519,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .footer-links a:hover { opacity: 1; }
 
 .footer-newsletter h5 {
-  color: #b8c0d8;
+  color: var(--footer-text);
 }
 
 .footer-newsletter form {
@@ -444,7 +543,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .page-hero {
   padding: 4rem 0 3rem;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .page-hero h1 {
@@ -461,7 +560,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .content-narrow p {
-  color: #4a5270;
+  color: var(--text-secondary);
   margin-bottom: 1.25rem;
 }
 
@@ -480,7 +579,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: flex;
   gap: 2rem;
   padding: 2rem 0;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .activity-item:last-child {
@@ -490,7 +589,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .activity-number {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #dde3ee;
+  color: var(--border);
   flex-shrink: 0;
   width: 40px;
   padding-top: 3px;
@@ -502,7 +601,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .activity-body p {
   font-size: 0.9rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -514,7 +613,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 500;
-  background: #fdf3eb;
+  background: var(--orange-bg);
   color: #c47d3a;
   padding: 2px 10px;
   border-radius: 10px;
@@ -527,8 +626,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
    ======================== */
 
 .info-box {
-  background: #eaf0ec;
-  border-left: 3px solid #84a38e;
+  background: var(--green-bg);
+  border-left: 3px solid var(--green);
   border-radius: 0 10px 10px 0;
   padding: 1.25rem 1.5rem;
   margin-top: 1.5rem;
@@ -536,12 +635,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .info-box p {
   font-size: 0.9rem;
-  color: #2a3559;
+  color: var(--text-primary);
   margin: 0 !important;
 }
 
 .info-box a {
-  color: #84a38e;
+  color: var(--green);
   text-decoration: underline;
 }
 
@@ -555,6 +654,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
   .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-actions .nav-cta { display: none; }
+  .theme-toggle { display: none; }
   .nav-toggle { display: block; }
 
   .hero { padding: 3rem 0; }
@@ -581,23 +682,21 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
    TEAM PAGE
    ======================== */
 
-/* Shared placeholder avatar */
 .placeholder-photo {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #eaf0ec;
+  background: var(--green-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #84a38e;
-  border: 2px solid #d0ddd2;
+  color: var(--green);
+  border: 2px solid var(--green-border);
   flex-shrink: 0;
 }
 
-/* Stacked list layout — one row per person */
 .team-list {
   display: flex;
   flex-direction: column;
@@ -610,15 +709,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   grid-template-columns: 260px 1fr;
   gap: 2.5rem;
   align-items: start;
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 16px;
   padding: 2rem 2.5rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background 0.2s;
 }
 
 .team-row:hover {
-  border-color: #c8d8cb;
+  border-color: var(--green-border);
 }
 
 .team-row-identity {
@@ -628,19 +727,19 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   text-align: center;
   gap: 0.75rem;
   padding-right: 2rem;
-  border-right: 1px solid #e4e8f0;
+  border-right: 1px solid var(--border-light);
 }
 
 .team-row-name {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #2a3559;
+  color: var(--text-primary);
   margin: 0;
 }
 
 .team-role {
   font-size: 0.85rem;
-  color: #84a38e;
+  color: var(--green);
   font-weight: 500;
 }
 
@@ -654,15 +753,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .team-tag {
   font-size: 0.75rem;
-  background: #f0edf6;
-  color: #75628f;
+  background: var(--violet-bg);
+  color: var(--violet);
   padding: 3px 10px;
   border-radius: 10px;
 }
 
 .team-row-bio p {
   font-size: 0.95rem;
-  color: #4a5270;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin: 0;
 }
@@ -676,7 +775,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
   .team-row-identity {
     border-right: none;
-    border-bottom: 1px solid #e4e8f0;
+    border-bottom: 1px solid var(--border-light);
     padding-right: 0;
     padding-bottom: 1.25rem;
   }
@@ -697,7 +796,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: flex;
   gap: 0;
   margin-bottom: 2rem;
-  border-bottom: 2px solid #e4e8f0;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .form-tab {
@@ -706,7 +805,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   padding: 0.75rem 1.5rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -2px;
@@ -714,9 +813,9 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .form-tab.active {
-  color: #2a3559;
+  color: var(--text-primary);
   font-weight: 500;
-  border-bottom-color: #84a38e;
+  border-bottom-color: var(--green);
 }
 
 .contact-form {
@@ -735,7 +834,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: block;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #2a3559;
+  color: var(--text-primary);
   margin-bottom: 0.4rem;
 }
 
@@ -744,7 +843,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .optional {
-  color: #b0b8cc;
+  color: var(--text-muted);
   font-weight: 400;
   font-size: 0.8rem;
 }
@@ -755,13 +854,13 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1.5px solid #dde3ee;
+  border: 1.5px solid var(--border);
   border-radius: 8px;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
-  color: #2a3559;
-  background: #fff;
-  transition: border-color 0.2s;
+  color: var(--text-primary);
+  background: var(--surface);
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
   appearance: none;
 }
 
@@ -770,7 +869,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #84a38e;
+  border-color: var(--green);
 }
 
 .form-group input[type="file"] {
@@ -778,12 +877,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   padding: 0.6rem 0;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.875rem;
-  color: #6b7494;
+  color: var(--text-secondary);
 }
 
 .field-hint {
   font-size: 0.8rem;
-  color: #b0b8cc;
+  color: var(--text-muted);
   margin-top: 0.4rem;
 }
 
@@ -796,14 +895,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .form-check input[type="checkbox"] {
   margin-top: 3px;
   flex-shrink: 0;
-  accent-color: #84a38e;
+  accent-color: var(--green);
   width: 16px;
   height: 16px;
 }
 
 .form-check label {
   font-size: 0.85rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   font-weight: 400;
   margin: 0;
 }
@@ -825,8 +924,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .btn-submit:hover { background: #d4925e; }
 
 .form-info-box {
-  background: #eaf0ec;
-  border-left: 3px solid #84a38e;
+  background: var(--green-bg);
+  border-left: 3px solid var(--green);
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
@@ -834,12 +933,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .form-info-box p {
   font-size: 0.875rem;
-  color: #2a3559;
+  color: var(--text-primary);
   margin: 0;
 }
 
 .form-info-box a {
-  color: #84a38e;
+  color: var(--green);
   text-decoration: underline;
 }
 
@@ -856,8 +955,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .success-icon {
   width: 52px;
   height: 52px;
-  background: #eaf0ec;
-  color: #84a38e;
+  background: var(--green-bg);
+  color: var(--green);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -871,7 +970,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .form-success p {
-  color: #6b7494;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -883,15 +982,16 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .contact-info-card {
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   padding: 1.5rem;
+  transition: background 0.2s;
 }
 
 .contact-info-card--tinted {
-  background: #eaf0ec;
-  border-color: #c8d8cb;
+  background: var(--green-bg);
+  border-color: var(--green-border);
 }
 
 .contact-info-card h4 {
@@ -907,13 +1007,13 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #b0b8cc;
+  color: var(--text-muted);
   margin-bottom: 0.2rem;
 }
 
 .contact-detail a {
   font-size: 0.9rem;
-  color: #84a38e;
+  color: var(--green);
 }
 
 .contact-detail a:hover {
@@ -925,9 +1025,9 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   align-items: center;
   gap: 0.75rem;
   padding: 0.6rem 0;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
   font-size: 0.9rem;
-  color: #2a3559;
+  color: var(--text-primary);
   transition: color 0.2s;
 }
 
@@ -935,7 +1035,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   border-bottom: none;
 }
 
-.contact-social:hover { color: #84a38e; }
+.contact-social:hover { color: var(--green); }
 
 .contact-social-icon {
   width: 34px;
@@ -951,7 +1051,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .contact-info-card p {
   font-size: 0.875rem;
-  color: #4a5270;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -975,16 +1075,16 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .resource-card {
   display: flex;
   gap: 1rem;
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   padding: 1.5rem;
-  transition: border-color 0.2s, transform 0.2s;
-  color: #2a3559;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  color: var(--text-primary);
 }
 
 .resource-card:hover {
-  border-color: #84a38e;
+  border-color: var(--green);
   transform: translateY(-2px);
 }
 
@@ -1007,14 +1107,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .resource-body p {
   font-size: 0.875rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 0.75rem;
 }
 
 .resource-link {
   font-size: 0.875rem;
-  color: #84a38e;
+  color: var(--green);
   font-weight: 500;
 }
 
@@ -1023,14 +1123,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
    ======================== */
 
 .breadcrumb {
-  background: #fff;
-  border-bottom: 1px solid #e4e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
   padding: 0.75rem 0;
+  transition: background 0.2s;
 }
 
 .breadcrumb a {
   font-size: 0.875rem;
-  color: #84a38e;
+  color: var(--green);
   transition: color 0.2s;
 }
 
@@ -1060,15 +1161,15 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: #eaf0ec;
-  color: #84a38e;
+  background: var(--green-bg);
+  color: var(--green);
   padding: 3px 12px;
   border-radius: 10px;
 }
 
 .resource-date {
   font-size: 0.8rem;
-  color: #b0b8cc;
+  color: var(--text-muted);
 }
 
 .resource-content h1 {
@@ -1078,11 +1179,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .resource-intro {
   font-size: 1.1rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .resource-body-content h2 {
@@ -1098,14 +1199,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .resource-body-content p {
-  color: #4a5270;
+  color: var(--text-secondary);
   margin-bottom: 1.25rem;
   line-height: 1.8;
 }
 
 .resource-body-content ul,
 .resource-body-content ol {
-  color: #4a5270;
+  color: var(--text-secondary);
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
   line-height: 1.8;
@@ -1116,20 +1217,20 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .resource-body-content a {
-  color: #84a38e;
+  color: var(--green);
   text-decoration: underline;
 }
 
 .resource-disclaimer {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e4e8f0;
+  border-top: 1px solid var(--border-light);
   font-size: 0.85rem;
-  color: #6b7494;
+  color: var(--text-secondary);
 }
 
 .resource-disclaimer strong {
-  color: #2a3559;
+  color: var(--text-primary);
 }
 
 /* Sidebar */
@@ -1142,21 +1243,22 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .sidebar-card {
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
+  transition: background 0.2s;
 }
 
 .sidebar-card--tinted {
-  background: #eaf0ec;
-  border-color: #c8d8cb;
+  background: var(--green-bg);
+  border-color: var(--green-border);
 }
 
 .sidebar-card h4 {
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
-  color: #2a3559;
+  color: var(--text-primary);
 }
 
 .sidebar-toc {
@@ -1165,7 +1267,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .sidebar-toc li {
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
   padding: 0.4rem 0;
 }
 
@@ -1173,11 +1275,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .sidebar-toc a {
   font-size: 0.875rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   transition: color 0.2s;
 }
 
-.sidebar-toc a:hover { color: #84a38e; }
+.sidebar-toc a:hover { color: var(--green); }
 
 .sidebar-links {
   list-style: none;
@@ -1186,14 +1288,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .sidebar-links li {
   padding: 0.4rem 0;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .sidebar-links li:last-child { border-bottom: none; }
 
 .sidebar-links a {
   font-size: 0.875rem;
-  color: #84a38e;
+  color: var(--green);
   transition: color 0.2s;
 }
 
@@ -1201,7 +1303,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .sidebar-card p {
   font-size: 0.875rem;
-  color: #4a5270;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
   line-height: 1.6;
 }
@@ -1209,20 +1311,20 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .sidebar-btn {
   display: block;
   text-align: center;
-  background: #fff;
-  border: 1.5px solid #c8d8cb;
-  color: #2a3559;
+  background: var(--surface);
+  border: 1.5px solid var(--green-border);
+  color: var(--text-primary);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
 .sidebar-btn:hover {
-  border-color: #84a38e;
-  color: #84a38e;
+  border-color: var(--green);
+  color: var(--green);
 }
 
 @media (max-width: 900px) {
@@ -1255,14 +1357,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #84a38e;
+  color: var(--green);
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .faq-item {
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .faq-question {
@@ -1277,20 +1379,19 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #2a3559;
+  color: var(--text-primary);
   cursor: pointer;
   text-align: left;
   transition: color 0.2s;
 }
 
-.faq-question:hover { color: #84a38e; }
-
-.faq-question[aria-expanded="true"] { color: #84a38e; }
+.faq-question:hover { color: var(--green); }
+.faq-question[aria-expanded="true"] { color: var(--green); }
 
 .faq-icon {
   font-size: 1.4rem;
   font-weight: 300;
-  color: #84a38e;
+  color: var(--green);
   flex-shrink: 0;
   transition: transform 0.3s;
   line-height: 1;
@@ -1310,7 +1411,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .faq-answer p {
-  color: #4a5270;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 0.75rem;
@@ -1319,7 +1420,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .faq-answer p:last-child { margin-bottom: 0; }
 
 .faq-answer a {
-  color: #84a38e;
+  color: var(--green);
   text-decoration: underline;
 }
 
@@ -1346,9 +1447,10 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
    ======================== */
 
 .blog-filter-bar {
-  background: #fff;
-  border-bottom: 1px solid #e4e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
   padding: 0;
+  transition: background 0.2s;
 }
 
 .blog-filters {
@@ -1367,7 +1469,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   padding: 1rem 1.25rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.875rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
@@ -1375,12 +1477,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   transition: color 0.2s, border-color 0.2s;
 }
 
-.blog-filter:hover { color: #2a3559; }
+.blog-filter:hover { color: var(--text-primary); }
 
 .blog-filter.active {
-  color: #2a3559;
+  color: var(--text-primary);
   font-weight: 500;
-  border-bottom-color: #84a38e;
+  border-bottom-color: var(--green);
 }
 
 /* Featured post */
@@ -1388,16 +1490,16 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  color: #2a3559;
-  transition: border-color 0.2s, transform 0.2s;
+  color: var(--text-primary);
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
 }
 
 .blog-featured:hover {
-  border-color: #84a38e;
+  border-color: var(--green);
   transform: translateY(-2px);
 }
 
@@ -1419,7 +1521,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .blog-featured-body p {
-  color: #6b7494;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -1429,12 +1531,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   width: 100%;
   height: 100%;
   min-height: 180px;
-  background: #eef2ee;
+  background: var(--bg-tinted);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  color: #b0b8cc;
+  color: var(--text-muted);
 }
 
 .blog-image-placeholder--large {
@@ -1457,7 +1559,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .blog-date {
   font-size: 0.8rem;
-  color: #b0b8cc;
+  color: var(--text-muted);
 }
 
 /* Category tags */
@@ -1474,6 +1576,12 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 .cat-guides { background: #eaf0ec; color: #3a6645; }
 .cat-mcuk-updates { background: #fdeaea; color: #c43a3a; }
 
+[data-theme="dark"] .cat-product-reviews { background: #2e1e0a; color: #e3a671; }
+[data-theme="dark"] .cat-patient-stories { background: #251e38; color: #9488b0; }
+[data-theme="dark"] .cat-news { background: #1a2038; color: #7898d0; }
+[data-theme="dark"] .cat-guides { background: #1e3028; color: #9ab8a4; }
+[data-theme="dark"] .cat-mcuk-updates { background: #2e1818; color: #d47878; }
+
 /* Author */
 .blog-author {
   display: flex;
@@ -1487,8 +1595,8 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #eaf0ec;
-  color: #84a38e;
+  background: var(--green-bg);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1498,19 +1606,19 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .blog-author-avatar.anon {
-  background: #f0edf6;
-  color: #75628f;
+  background: var(--violet-bg);
+  color: var(--violet);
 }
 
 .blog-author-name {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #2a3559;
+  color: var(--text-primary);
 }
 
 .blog-author-role {
   font-size: 0.75rem;
-  color: #b0b8cc;
+  color: var(--text-muted);
 }
 
 /* Blog grid */
@@ -1522,18 +1630,18 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .blog-card {
-  background: #fff;
-  border: 0.5px solid #dde3ee;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  color: #2a3559;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
 }
 
 .blog-card:hover {
-  border-color: #84a38e;
+  border-color: var(--green);
   transform: translateY(-2px);
 }
 
@@ -1562,7 +1670,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .blog-card-body p {
   font-size: 0.875rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   line-height: 1.6;
   flex: 1;
 }
@@ -1570,7 +1678,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 /* Submit CTA */
 .blog-submit-cta {
   margin-top: 3rem;
-  background: #eaf0ec;
+  background: var(--green-bg);
   border-radius: 16px;
   padding: 2rem 2.5rem;
 }
@@ -1589,7 +1697,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 
 .blog-submit-inner p {
   font-size: 0.9rem;
-  color: #6b7494;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -1599,7 +1707,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 0;
-  border-bottom: 1px solid #e4e8f0;
+  border-bottom: 1px solid var(--border-light);
   margin-bottom: 2rem;
 }
 
@@ -1619,14 +1727,14 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   gap: 0.5rem;
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e4e8f0;
+  border-top: 1px solid var(--border-light);
 }
 
 .post-tag {
   font-size: 0.8rem;
-  background: #f7f7f9;
-  border: 1px solid #dde3ee;
-  color: #6b7494;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
   padding: 4px 12px;
   border-radius: 10px;
 }
@@ -1661,10 +1769,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   bottom: 0;
   left: 0;
   right: 0;
-  background: #2a3559;
-  color: #b8c0d8;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   z-index: 1000;
   border-top: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.2s;
 }
 
 .cookie-banner-inner {
@@ -1682,11 +1791,11 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   font-size: 0.875rem;
   line-height: 1.6;
   margin: 0;
-  color: #b8c0d8;
+  color: var(--footer-text);
 }
 
 .cookie-text a {
-  color: #84a38e;
+  color: var(--green);
   text-decoration: underline;
 }
 
@@ -1697,7 +1806,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 .cookie-btn {
-  background: #84a38e;
+  background: var(--green);
   color: #fff;
   border: none;
   padding: 8px 24px;
@@ -1719,6 +1828,7 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   }
 
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
