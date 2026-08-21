@@ -1442,6 +1442,24 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
 }
 
 /* ========================
+   NEWSLETTER PAGE
+   ======================== */
+
+.newsletter-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .newsletter-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ========================
    BLOG PAGE
    ======================== */
 
@@ -1832,13 +1850,3 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   }
 }
 
-/* ========================
-   NEWSLETTER
-   ======================== */
-
-@media (max-width: 768px) {
-  .newsletter-layout {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-}
