@@ -5,6 +5,7 @@ import { client, resourceBySlugQuery, urlFor } from '../../../lib/sanity'
 import { PortableText } from '@portabletext/react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import ShareButtons from '../../../components/ShareButtons'
 
 interface ResourcePageProps {
   params: Promise<{ slug: string }>
@@ -101,6 +102,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
 
   const authorName = resource.author?.name || 'MCUK'
   const authorInitials = authorName.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()
+  const resourceUrl = `https://mcukcic.co.uk/resources/${resource.slug.current}`
 
   return (
     <>
@@ -158,6 +160,11 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                 </div>
               )}
 
+              {/* SHARE (top) */}
+              <div style={{ marginBottom: '2rem' }}>
+                <ShareButtons url={resourceUrl} title={resource.title} />
+              </div>
+
               {/* FEATURED IMAGE */}
               {resource.featuredImage && (
                 <figure className="post-featured-image">
@@ -184,6 +191,11 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                 {resource.body && (
                   <PortableText value={resource.body} components={portableTextComponents} />
                 )}
+              </div>
+
+              {/* SHARE (bottom) */}
+              <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #e4e8f0' }}>
+                <ShareButtons url={resourceUrl} title={resource.title} />
               </div>
 
               {/* DISCLAIMER */}

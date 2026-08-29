@@ -5,6 +5,7 @@ import { client, blogPostQuery, urlFor } from '../../../lib/sanity'
 import { PortableText } from '@portabletext/react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import ShareButtons from '../../../components/ShareButtons'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -105,6 +106,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
   const authorName = post.anonymous ? 'Anonymous' : post.author?.name || post.submittedBy?.name || 'MCUK'
   const authorRole = post.anonymous ? 'Patient' : post.author?.role || post.submittedBy?.authorType || ''
   const authorInitials = authorName === 'Anonymous' ? '?' : authorName.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()
+  const postUrl = `https://mcukcic.co.uk/blog/${post.slug.current}`
 
   return (
     <>
@@ -163,6 +165,11 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 </div>
               </div>
 
+              {/* SHARE (top) */}
+              <div style={{ marginBottom: '2rem' }}>
+                <ShareButtons url={postUrl} title={post.title} />
+              </div>
+
               {/* FEATURED IMAGE */}
               {post.featuredImage && (
                 <figure className="post-featured-image">
@@ -197,6 +204,11 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                   ))}
                 </div>
               )}
+
+              {/* SHARE (bottom) */}
+              <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #e4e8f0' }}>
+                <ShareButtons url={postUrl} title={post.title} />
+              </div>
 
               {/* DISCLAIMER */}
               <div className="resource-disclaimer">
