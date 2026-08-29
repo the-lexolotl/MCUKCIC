@@ -39,13 +39,25 @@ const portableTextComponents = {
   },
   types: {
     image: ({ value }: any) => (
-      <div style={{ margin: '2rem 0', borderRadius: '12px', overflow: 'hidden' }}>
-        <img
-          src={urlFor(value).width(800).url()}
-          alt={value.alt || ''}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>
+      <figure style={{ margin: '2rem 0' }}>
+        <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
+          <img
+            src={urlFor(value).width(800).url()}
+            alt={value.alt || ''}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+        {value.caption && (
+          <figcaption style={{
+            fontSize: '0.85rem',
+            color: '#6b7494',
+            marginTop: '0.5rem',
+            textAlign: 'center',
+          }}>
+            {value.caption}
+          </figcaption>
+        )}
+      </figure>
     ),
   },
 }
@@ -133,7 +145,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                   {post.author?.photo && !post.anonymous ? (
                     <Image
                       src={urlFor(post.author.photo).width(44).height(44).url()}
-                      alt={authorName}
+                      alt={post.author.photo.alt || authorName}
                       width={44}
                       height={44}
                       style={{ borderRadius: '50%', objectFit: 'cover' }}
@@ -153,13 +165,23 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
 
               {/* FEATURED IMAGE */}
               {post.featuredImage && (
-                <div className="post-featured-image">
+                <figure className="post-featured-image">
                   <img
                     src={urlFor(post.featuredImage).width(800).url()}
                     alt={post.featuredImage.alt || post.title}
                     style={{ width: '100%', borderRadius: '12px', display: 'block' }}
                   />
-                </div>
+                  {post.featuredImage.caption && (
+                    <figcaption style={{
+                      fontSize: '0.85rem',
+                      color: '#6b7494',
+                      marginTop: '0.5rem',
+                      textAlign: 'center',
+                    }}>
+                      {post.featuredImage.caption}
+                    </figcaption>
+                  )}
+                </figure>
               )}
 
               {/* BODY */}
@@ -194,7 +216,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                       {post.author.photo ? (
                         <Image
                           src={urlFor(post.author.photo).width(44).height(44).url()}
-                          alt={post.author.name}
+                          alt={post.author.photo.alt || post.author.name}
                           width={44}
                           height={44}
                           style={{ borderRadius: '50%', objectFit: 'cover' }}

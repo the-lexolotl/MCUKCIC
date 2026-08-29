@@ -52,13 +52,25 @@ const portableTextComponents = {
   },
   types: {
     image: ({ value }: any) => (
-      <div style={{ margin: '2rem 0', borderRadius: '12px', overflow: 'hidden' }}>
-        <img
-          src={urlFor(value).width(800).url()}
-          alt={value.alt || ''}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </div>
+      <figure style={{ margin: '2rem 0' }}>
+        <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
+          <img
+            src={urlFor(value).width(800).url()}
+            alt={value.alt || ''}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+        {value.caption && (
+          <figcaption style={{
+            fontSize: '0.85rem',
+            color: '#6b7494',
+            marginTop: '0.5rem',
+            textAlign: 'center',
+          }}>
+            {value.caption}
+          </figcaption>
+        )}
+      </figure>
     ),
   },
 }
@@ -132,7 +144,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                     {resource.author.photo ? (
                       <Image
                         src={urlFor(resource.author.photo).width(44).height(44).url()}
-                        alt={authorName}
+                        alt={resource.author.photo.alt || authorName}
                         width={44}
                         height={44}
                         style={{ borderRadius: '50%', objectFit: 'cover' }}
@@ -148,13 +160,23 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
 
               {/* FEATURED IMAGE */}
               {resource.featuredImage && (
-                <div className="post-featured-image">
+                <figure className="post-featured-image">
                   <img
                     src={urlFor(resource.featuredImage).width(800).url()}
                     alt={resource.featuredImage.alt || resource.title}
                     style={{ width: '100%', borderRadius: '12px', display: 'block' }}
                   />
-                </div>
+                  {resource.featuredImage.caption && (
+                    <figcaption style={{
+                      fontSize: '0.85rem',
+                      color: '#6b7494',
+                      marginTop: '0.5rem',
+                      textAlign: 'center',
+                    }}>
+                      {resource.featuredImage.caption}
+                    </figcaption>
+                  )}
+                </figure>
               )}
 
               {/* BODY */}
@@ -182,7 +204,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                       {resource.author.photo ? (
                         <Image
                           src={urlFor(resource.author.photo).width(44).height(44).url()}
-                          alt={authorName}
+                          alt={resource.author.photo.alt || authorName}
                           width={44}
                           height={44}
                           style={{ borderRadius: '50%', objectFit: 'cover' }}
