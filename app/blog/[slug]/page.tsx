@@ -38,7 +38,7 @@ const portableTextComponents = {
     ),
   },
   types: {
-    image: ({ value }: any) => (
+    mediaImage: ({ value }: any) => (
       <figure style={{ margin: '2rem 0' }}>
         <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
           <img
