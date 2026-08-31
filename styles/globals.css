@@ -1850,3 +1850,364 @@ h5 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spa
   }
 }
 
+/* ========================
+   LINKTREE / LINK PAGES
+   ======================== */
+
+.lp-shell {
+  min-height: 100vh;
+  background: #f7f7f9;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Logo */
+.lp-logo {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.lp-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2a3559;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.lp-subtitle {
+  font-size: 0.8rem;
+  color: #84a38e;
+  font-weight: 500;
+}
+
+/* Social row */
+.lp-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.lp-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.lp-social-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.lp-social-icon {
+  font-size: 0.9rem;
+}
+
+/* Section */
+.lp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lp-section-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #84a38e;
+  margin: 0;
+}
+
+.lp-section-desc {
+  font-size: 0.875rem;
+  color: #6b7494;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Links */
+.lp-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lp-link {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  background: #ffffff;
+  border: 0.5px solid #dde3ee;
+  border-radius: 12px;
+  padding: 0.875rem 1rem;
+  color: #2a3559;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.lp-link:hover {
+  border-color: #84a38e;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(42, 53, 89, 0.08);
+}
+
+.lp-link--primary {
+  border-color: #84a38e;
+  background: #eaf0ec;
+}
+
+.lp-link--campaign {
+  border-color: #e3a671;
+  background: #fdf3eb;
+}
+
+.lp-link--placeholder {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.lp-link-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.lp-link-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #84a38e;
+  margin-bottom: 0.2rem;
+}
+
+.lp-link-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2a3559;
+  line-height: 1.3;
+}
+
+.lp-link-desc {
+  font-size: 0.78rem;
+  color: #6b7494;
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.lp-link-arrow {
+  margin-left: auto;
+  color: #b0b8cc;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Team row */
+.lp-team-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.lp-team-card {
+  background: #ffffff;
+  border: 0.5px solid #dde3ee;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  color: #2a3559;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lp-team-card:hover {
+  border-color: #84a38e;
+  transform: translateY(-1px);
+}
+
+.lp-team-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eaf0ec;
+  color: #84a38e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 2px solid #c8d8cb;
+}
+
+.lp-team-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2a3559;
+  line-height: 1.3;
+}
+
+.lp-team-role {
+  font-size: 0.7rem;
+  color: #84a38e;
+}
+
+/* Donate button */
+.lp-donate-btn {
+  display: block;
+  text-align: center;
+  background: #e3a671;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 26px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+
+.lp-donate-btn:hover {
+  background: #d4925e;
+  transform: translateY(-1px);
+}
+
+/* Contact grid */
+.lp-contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lp-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #84a38e;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px solid #e4e8f0;
+  text-decoration: none;
+}
+
+.lp-contact-item:last-child {
+  border-bottom: none;
+}
+
+.lp-contact-item:hover {
+  color: #5a7d64;
+}
+
+/* Profile section */
+.lp-profile {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e4e8f0;
+}
+
+.lp-profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #eaf0ec;
+  color: #84a38e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 3px solid #c8d8cb;
+  margin: 0 auto 1rem;
+}
+
+.lp-profile-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2a3559;
+  margin-bottom: 0.25rem;
+}
+
+.lp-profile-role {
+  font-size: 0.85rem;
+  color: #84a38e;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.lp-profile-bio {
+  font-size: 0.875rem;
+  color: #6b7494;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.lp-profile-link {
+  font-size: 0.875rem;
+  color: #84a38e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.lp-profile-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.lp-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e4e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lp-footer p {
+  font-size: 0.75rem;
+  color: #b0b8cc;
+}
+
+.lp-footer-disclaimer {
+  font-size: 0.7rem !important;
+  color: #c8d0e0 !important;
+  font-style: italic;
+}
+
+.lp-footer-back {
+  font-size: 0.875rem;
+  color: #84a38e;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.lp-footer-back:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  .lp-shell {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .lp-team-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+}
