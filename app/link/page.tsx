@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { client, blogListQuery } from '../../lib/sanity'
 import type { Metadata } from 'next'
+import { FacebookIcon, DiscordIcon, InstagramIcon, YoutubeIcon, LinkedinIcon, BlueskyIcon } from '../../components/SocialIcons'
 
 export const metadata: Metadata = {
   title: 'MCUK — Links',
@@ -30,26 +31,26 @@ export default async function LinkPage() {
         <p className="lp-subtitle">Patient-led · Registered CIC · No. 17373828</p>
       </div>
 
-      {/* SOCIAL LINKS */}
+     {/* SOCIAL LINKS */}
       <div className="lp-section">
         <div className="lp-social-row">
-          <a href="https://www.facebook.com/groups/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#1877f2'}}>
-            <span className="lp-social-icon">f</span> Facebook
+          <a href="https://www.facebook.com/groups/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="Facebook">
+            <FacebookIcon size={40} />
           </a>
-          <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#5865f2'}}>
-            <span className="lp-social-icon">&#9671;</span> Discord
+          <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="Discord">
+            <DiscordIcon size={40} />
           </a>
-          <a href="https://www.instagram.com/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#e1306c'}}>
-            <span className="lp-social-icon">&#9679;</span> Instagram
+          <a href="https://www.instagram.com/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="Instagram">
+            <InstagramIcon size={40} />
           </a>
-          <a href="https://www.youtube.com/@MCUK-CIC" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#ff0000'}}>
-            <span className="lp-social-icon">&#9654;</span> YouTube
+          <a href="https://www.youtube.com/@MCUK-CIC" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="YouTube">
+            <YoutubeIcon size={40} />
           </a>
-          <a href="https://www.linkedin.com/company/mcuk-cic/" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#0a66c2'}}>
-            <span className="lp-social-icon">in</span> LinkedIn
+          <a href="https://www.linkedin.com/company/mcuk-cic/" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="LinkedIn">
+            <LinkedinIcon size={40} />
           </a>
-          <a href="https://bsky.app/profile/mcuk-cic.bsky.social" target="_blank" rel="noopener noreferrer" className="lp-social-btn" style={{background:'#0085ff'}}>
-            <span className="lp-social-icon">&#9728;</span> Bluesky
+          <a href="https://bsky.app/profile/mcuk-cic.bsky.social" target="_blank" rel="noopener noreferrer" className="lp-social-icon-btn" aria-label="Bluesky">
+            <BlueskyIcon size={40} />
           </a>
         </div>
       </div>
@@ -99,11 +100,12 @@ export default async function LinkPage() {
         <div className="lp-links">
 
           {/* Medical Cannabis Awareness Week */}
-          <a href="https://www.medicinalcannabisweek.co.uk" target="_blank" rel="noopener noreferrer" className="lp-link lp-link--campaign">
+          <a href="https://www.medicalcannabisweek.org.uk/" target="_blank" rel="noopener noreferrer" className="lp-link lp-link--campaign">
             <span className="lp-link-icon">&#127807;</span>
             <div>
-              <div className="lp-link-title">Medical Cannabis Awareness Week</div>
-              <div className="lp-link-desc">1–7 November annually — raising awareness of cannabis-based medicines across the UK</div>
+              <div className="lp-link-badge">MCUK is hosting</div>
+              <div className="lp-link-title">Medical Cannabis Awareness Week 2026</div>
+              <div className="lp-link-desc">2–8 November 2026 — join us as we host this year&apos;s national awareness week for cannabis-based medicines</div>
             </div>
             <span className="lp-link-arrow">→</span>
           </a>

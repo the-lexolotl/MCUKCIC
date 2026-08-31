@@ -3,6 +3,7 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import { useState } from 'react'
+import { FacebookIcon, DiscordIcon, YoutubeIcon } from '../../components/SocialIcons'
 
 export default function Contact() {
   const [activeTab, setActiveTab] = useState<'general' | 'blog'>('general')
@@ -266,16 +267,16 @@ export default function Contact() {
 
               <div className="contact-info-card">
                 <h4>Find us online</h4>
-                <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="contact-social">
-                  <div className="contact-social-icon" style={{background:'#eef2fb', color:'#3b5998'}}>f</div>
+                <a href="https://www.facebook.com/groups/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="contact-social">
+                  <div className="contact-social-icon"><FacebookIcon size={28} /></div>
                   <span>Facebook community</span>
                 </a>
                 <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="contact-social">
-                  <div className="contact-social-icon" style={{background:'#eeedfb', color:'#5865f2'}}>&#9671;</div>
+                  <div className="contact-social-icon"><DiscordIcon size={28} /></div>
                   <span>Discord server</span>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="contact-social">
-                  <div className="contact-social-icon" style={{background:'#feeeed', color:'#ff0000'}}>&#9654;</div>
+                <a href="https://www.youtube.com/@MCUK-CIC" target="_blank" rel="noopener noreferrer" className="contact-social">
+                  <div className="contact-social-icon"><YoutubeIcon size={28} /></div>
                   <span>YouTube channel</span>
                 </a>
               </div>

@@ -31,13 +31,8 @@ export default function NewsletterPage() {
 
         {/* SIGNUP SECTION */}
         <section className="section">
-          <div className="newsletter-layout">
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '4rem',
-              alignItems: 'start',
-            }}>
+          <div className="container">
+            <div className="newsletter-layout">
 
               {/* LEFT — what to expect */}
               <div>
@@ -54,7 +49,7 @@ export default function NewsletterPage() {
                     <div className="activity-number">02</div>
                     <div className="activity-body">
                       <h3>Community news</h3>
-                      <p>Updates from the MCUK community, new features, events, and what we've been working on.</p>
+                      <p>Updates from the MCUK community, new features, events, and what we&apos;ve been working on.</p>
                     </div>
                   </div>
                   <div className="activity-item">
@@ -80,7 +75,7 @@ export default function NewsletterPage() {
                 <div className="info-box" style={{ marginTop: '1.5rem' }}>
                   <p>
                     By subscribing you agree to receive emails from MCUK. We handle your data in accordance with our{' '}
-                    <a href="/privacy">Privacy Policy</a>. You can unsubscribe at any time.
+                    <a href="/policies/privacy">Privacy Policy</a>. You can unsubscribe at any time.
                   </p>
                 </div>
               </div>

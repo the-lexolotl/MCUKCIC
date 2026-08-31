@@ -2,6 +2,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import NewsletterPopup from '../components/NewsletterPopup'
 import Link from 'next/link'
+import { FacebookIcon, DiscordIcon, InstagramIcon, YoutubeIcon, LinkedinIcon, BlueskyIcon } from '../components/SocialIcons'
 
 import type { Metadata } from 'next'
 
@@ -80,31 +81,52 @@ export default function Home() {
         </section>
 
         {/* COMMUNITY */}
-        <section className="section" id="community">
+        <section className="section section-tinted" id="community">
           <div className="container">
             <div className="section-label">Find us online</div>
             <h2>Join our community</h2>
-            <p className="section-sub">We're building spaces where UK cannabis patients can find support, share experiences, and stay informed.</p>
+            <p className="section-sub">We&apos;re building spaces where UK cannabis patients can find support, share experiences, and stay informed.</p>
             <div className="social-cards">
-              <a href="https://www.facebook.com/groups/mcuk.cic" target="_blank" rel="noopener noreferrer" className="social-card">
-                <div className="social-icon" style={{background:'#eef2fb', color:'#3b5998'}}>f</div>
+              <a href="https://www.facebook.com/groups/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon-img"><FacebookIcon size={40} /></div>
                 <div>
                   <h4>Facebook</h4>
                   <p>Our active community — join thousands of UK patients</p>
                 </div>
               </a>
               <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="social-card">
-                <div className="social-icon" style={{background:'#eeedfb', color:'#5865f2'}}>&#9671;</div>
+                <div className="social-icon-img"><DiscordIcon size={40} /></div>
                 <div>
                   <h4>Discord</h4>
                   <p>Real-time chat, support channels, and community events</p>
                 </div>
               </a>
-              <a href="https://www.youtube.com/channel/UCxsbiTttOJZhiF281Etcx7w" target="_blank" rel="noopener noreferrer" className="social-card">
-                <div className="social-icon" style={{background:'#feeeed', color:'#ff0000'}}>&#9654;</div>
+              <a href="https://www.youtube.com/@MCUK-CIC" target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon-img"><YoutubeIcon size={40} /></div>
                 <div>
                   <h4>YouTube</h4>
                   <p>Guides, interviews, and patient stories</p>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon-img"><InstagramIcon size={40} /></div>
+                <div>
+                  <h4>Instagram</h4>
+                  <p>News, updates, and patient stories</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/company/mcuk-cic/" target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon-img"><LinkedinIcon size={40} /></div>
+                <div>
+                  <h4>LinkedIn</h4>
+                  <p>Professional updates and advocacy news</p>
+                </div>
+              </a>
+              <a href="https://bsky.app/profile/mcuk-cic.bsky.social" target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon-img"><BlueskyIcon size={40} /></div>
+                <div>
+                  <h4>Bluesky</h4>
+                  <p>Follow us on Bluesky</p>
                 </div>
               </a>
             </div>

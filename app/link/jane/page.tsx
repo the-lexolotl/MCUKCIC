@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { FacebookIcon, DiscordIcon, InstagramIcon } from '../../../components/SocialIcons'
 
 export const metadata: Metadata = {
   title: 'Jane Hinchliffe — MCUK',
@@ -45,7 +46,7 @@ export default function JanePage() {
             <span className="lp-link-arrow">→</span>
           </Link>
           <a href="https://www.facebook.com/groups/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-link">
-            <span className="lp-link-icon" style={{color:'#1877f2'}}>f</span>
+            <span className="lp-link-icon"><FacebookIcon size={24} /></span>
             <div>
               <div className="lp-link-title">Facebook community</div>
               <div className="lp-link-desc">Join our patient community</div>
@@ -53,7 +54,7 @@ export default function JanePage() {
             <span className="lp-link-arrow">→</span>
           </a>
           <a href="https://discord.gg/m5HajJPPj2" target="_blank" rel="noopener noreferrer" className="lp-link">
-            <span className="lp-link-icon" style={{color:'#5865f2'}}>&#9671;</span>
+            <span className="lp-link-icon"><DiscordIcon size={24} /></span>
             <div>
               <div className="lp-link-title">Discord server</div>
               <div className="lp-link-desc">Real-time community chat</div>
@@ -61,7 +62,7 @@ export default function JanePage() {
             <span className="lp-link-arrow">→</span>
           </a>
           <a href="https://www.instagram.com/mcuk.cic/" target="_blank" rel="noopener noreferrer" className="lp-link">
-            <span className="lp-link-icon" style={{color:'#e1306c'}}>&#9679;</span>
+            <span className="lp-link-icon"><InstagramIcon size={24} /></span>
             <div>
               <div className="lp-link-title">Instagram</div>
               <div className="lp-link-desc">@mcuk.cic</div>
