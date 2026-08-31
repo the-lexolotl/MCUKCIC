@@ -57,7 +57,7 @@ export default function Nav() {
           >
             {darkMode ? '☀' : '☽'}
           </button>
-          <Link href="/contact" className="nav-cta">Get support</Link>
+          <Link href="/donate" className="nav-cta">Donate</Link>
           <button
             className="nav-toggle"
             aria-label="Open menu"
